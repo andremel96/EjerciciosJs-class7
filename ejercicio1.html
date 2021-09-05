@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO #1</title>
+    <script type="text/javascript" src="JS/met.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<script>
+    // creamos una funcion inicial donde se estaran identificando 
+    // cada uno de los imput
+    function initial() {
+        number1 = document.getElementById("primerNumero");
+        number2 = document.getElementById("segundoNumero");
+        number1.addEventListener("input", validacion, false);
+        number2.addEventListener("input", validacion, false);
+        validacion();
+    }
+    // se crea la funcion de validacion de negativos
+    function validacion() {
+        if (primerNumero.value < 0 || primerNumero.value < 0) {
+            number1.setCustomValidity('inserte un numero mayor a cero');
+            number1.style.background = '#ffdddd'
+        }
+        else {
+            if (segundoNumero.value < 0 || segundoNumero.value == '') {
+                number2.setCustomValidity('inserte al menos un nombre');
+                number2.style.background = '#ffdddd'
+            }
+        }
+    }
+    window.addEventListener("load", initial, false);
+</script>
+
+<body>
+    <!-- menu -->
+    <div>
+        <nav>
+            <ul class="horizontal">
+                <li><a href="ejercicio1.html">ejercicio 1</a></li>
+                <li><a href="ejercicio2.html">ejercicio 2</a></li>
+                <li><a href="Ejercicio3.html">ejercicio 3</a></li>
+                <li><a href="ejercicio4.html">ejercicio 4</a></li>
+                <li><a href="ejercicio5.html">ejercicio 5</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="app">
+    </div>
+    <br>
+    <h1>funciones para la validacion de numero negativo
+
+    </h1></br>
+
+    <section>
+        <form mane="numeracion" metod="GET">
+            <div>Ingrese un numero
+                <input type="number" name="primerNumero" id="primerNumero" min="0">
+            </div>
+            <div>
+                Ingrese un numero
+                <input type="number" name="segundoNumero" id="segundoNumero" min="0">
+            </div>
+            <!-- al hacer click mandamos a llamar al metodo duplicidad -->
+            <button type="button" onclick="doubleNumber()"> calcular </button>
+            <form>
+                <div>
+                    EL RESULTADO DE LA DUPLICIDAD ES
+                </div>
+            </form>
+            <div id="resultDouble"></div>
+        </form>
+    </section>
+</body>
+
+</html>
